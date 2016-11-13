@@ -1,14 +1,125 @@
 almostBlack = #030907
+good        = #366317
+prettyBlue  = #175cfe
 red         = #f21d23
 
-body
-  background-color almostBlack
+pointColor      = #b0a69a
+importantText   = #b39f4b
+importanterText = #e3d34b
 
-.input-field
-  width 700px
-  font-size 1em
-  margin-top 3em
-  color red
+ignorable         = #807872
+veryIgnorable     = #54574d
+veryVeryIgnorable = #2a2c27
+
+background      = #030907
+backgroundx2    = #06120e
+offBackground   = #0a050d
+offBlue         = #143b2e
+actualBlack     = #000000
+
+pseudoPointColor = #d0a69a
+
+i3 = #131610
+
+@font-face
+  font-family HFNSSV
+  src url("./HFNSSvector0.ttf")
+
+body
+  margin 0
+  padding 0
   background-color almostBlack
-  border 1px solid red
-  outline none
+  
+.point
+  font-family HFNSSV
+  color pointColor
+  font-size 4em
+  margin 0
+  margin-bottom 20px
+  line-height 1em
+  &.big
+    font-size 11em
+    text-align center
+  &.sub-header
+    text-align center
+  &.small
+    font-size 2em
+  &.blue
+    color prettyBlue
+  &.blink
+    animation: blink-animation 3s steps(3, start) infinite;
+    -webkit-animation: blink-animation 3s steps(3, start) infinite;
+
+.main-container
+  width 100%
+  position absolute
+  top 50px
+  left 0px
+
+.main
+  width 1000px
+  height 100%
+  margin auto
+  
+.header-bar-container
+  position fixed
+  top 0
+  left 0
+  width 100%
+  height 50px
+  border-bottom 2px solid veryIgnorable
+  background almostBlack
+  z-index 5
+  
+.header-bar
+  width 1000px
+  margin auto
+  display flex
+  justify-content space-between
+
+.header-button
+  font-family HFNSSV
+  color importantText
+  font-size 3em
+  margin 8px
+  float left
+  cursor pointer
+  &:hover
+    color importanterText
+    
+.main-video
+  width 100%
+  min-height 400px
+  
+.body
+  position absolute
+  width 1000px
+  top 0
+
+.block
+  margin-top 100px
+  height 450px
+
+.background-video
+  width 100%
+  height 650px
+  overflow hidden
+  border-bottom 2px solid veryIgnorable
+
+
+@keyframes blink-animation {
+  from {
+    color red
+  }
+  to {
+    color prettyBlue
+  }
+}
+@-webkit-keyframes blink-animation {
+  from {
+    color red
+  }
+  to {
+    color pointColor
+  }
+}

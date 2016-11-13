@@ -1,9 +1,7 @@
 module Types exposing (..)
 
 type Msg 
-  = UpdateField   String
-  | CheckForEnter Int
-  | DoTheThing    String
+  = Navigate String
 
 type alias Model =
-  { field  : String }
+  { page  : String }

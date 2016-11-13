@@ -1,12 +1,131 @@
+@font-face {
+  font-family: HFNSSV;
+  src: url("./HFNSSvector0.ttf");
+}
 body {
+  margin: 0;
+  padding: 0;
   background-color: #030907;
 }
-.input-field {
-  width: 700px;
-  font-size: 1em;
-  margin-top: 3em;
-  color: #f21d23;
-  background-color: #030907;
-  border: 1px solid #f21d23;
-  outline: none;
+.point {
+  font-family: HFNSSV;
+  color: #b0a69a;
+  font-size: 4em;
+  margin: 0;
+  margin-bottom: 20px;
+  line-height: 1em;
+}
+.point.big {
+  font-size: 11em;
+  text-align: center;
+}
+.point.sub-header {
+  text-align: center;
+}
+.point.small {
+  font-size: 2em;
+}
+.point.blue {
+  color: #175cfe;
+}
+.point.blink {
+  animation: blink-animation 3s steps(3, start) infinite;
+  -webkit-animation: blink-animation 3s steps(3, start) infinite;
+}
+.main-container {
+  width: 100%;
+  position: absolute;
+  top: 50px;
+  left: 0px;
+}
+.main {
+  width: 1000px;
+  height: 100%;
+  margin: auto;
+}
+.header-bar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  border-bottom: 2px solid #54574d;
+  background: #030907;
+  z-index: 5;
+}
+.header-bar {
+  width: 1000px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.header-button {
+  font-family: HFNSSV;
+  color: #b39f4b;
+  font-size: 3em;
+  margin: 8px;
+  float: left;
+  cursor: pointer;
+}
+.header-button:hover {
+  color: #e3d34b;
+}
+.main-video {
+  width: 100%;
+  min-height: 400px;
+}
+.body {
+  position: absolute;
+  width: 1000px;
+  top: 0;
+}
+.block {
+  margin-top: 100px;
+  height: 450px;
+}
+.background-video {
+  width: 100%;
+  height: 650px;
+  overflow: hidden;
+  border-bottom: 2px solid #54574d;
+}
+@-webkit-keyframes blink-animation {
+  from {
+    color: #f21d23;
+  }
+  to {
+    color: #b0a69a;
+  }
+}
+@-moz-keyframes blink-animation {
+  from {
+    color: #f21d23;
+  }
+  to {
+    color: #175cfe;
+  }
+}
+@-webkit-keyframes blink-animation {
+  from {
+    color: #f21d23;
+  }
+  to {
+    color: #175cfe;
+  }
+}
+@-o-keyframes blink-animation {
+  from {
+    color: #f21d23;
+  }
+  to {
+    color: #175cfe;
+  }
+}
+@keyframes blink-animation {
+  from {
+    color: #f21d23;
+  }
+  to {
+    color: #175cfe;
+  }
 }

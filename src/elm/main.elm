@@ -1,37 +1,53 @@
 import Html             exposing (p, text)
 import Html.Attributes  exposing (class)
-import Html.App         as App
+import Navigation       exposing (..)
 import Types            exposing (..)
 import Ports            exposing (..)
 import View             exposing (view)
+import String           exposing (slice, length)
 import Debug
 
 main =
-  App.program
-  { init          = (Model "Elm 0.17 Gulp Coffeescript Stylus Lodash Browserify Boilerplate!", Cmd.none) 
+  program urlParser
+  { init          = init
   , view          = view
   , update        = update
+  , urlUpdate     = urlUpdate
   , subscriptions = subscriptions
   }
 
+
+init : Model  -> (Model, Cmd Msg)
+init model =
+  urlUpdate model (Model "Home")
+
 subscriptions : Model -> Sub Msg
-subscriptions model =
-  response DoTheThing
+subscriptions model = Sub.none
 
 update : Msg -> Model -> (Model, Cmd Msg)
-update message m =
+update message model =
   case message of 
 
-    UpdateField str ->
-      (Model str, Cmd.none)
+    Navigate to ->
+      (model, newUrl ("#/" ++ to))
 
-    CheckForEnter code ->
-      if code == 13 then 
-        (Model "Submitted!", Cmd.none)
-      else
-        (m, Cmd.none)
 
-    DoTheThing str ->
-      (Model str, Cmd.none)
+urlUpdate : Model -> Model -> (Model, Cmd Msg)
+urlUpdate model' model =
+  (model', Cmd.none)
 
+
+urlParser : Parser Model
+urlParser =
+  makeParser (fromUrl << .hash)
+
+
+fromUrl : String -> Model
+fromUrl url =
+  Model (slice 2 (length url) url)
+
+
+toUrl : Model -> String
+toUrl {page} =
+  "#/" ++ page
 
