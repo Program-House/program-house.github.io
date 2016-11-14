@@ -8881,44 +8881,239 @@ var _user$project$Types$Model = function (a) {
 var _user$project$Types$Navigate = function (a) {
 	return {ctor: 'Navigate', _0: a};
 };
+var _user$project$Types$Contact = {ctor: 'Contact'};
+var _user$project$Types$Services = {ctor: 'Services'};
+var _user$project$Types$About = {ctor: 'About'};
+var _user$project$Types$Home = {ctor: 'Home'};
 
-var _user$project$Ports$request = _elm_lang$core$Native_Platform.outgoingPort(
-	'request',
-	function (v) {
-		return v;
+var _user$project$Components$heightAndMargin = F2(
+	function (height, margin) {
+		return _elm_lang$html$Html_Attributes$style(
+			_elm_lang$core$Native_List.fromArray(
+				[
+					{ctor: '_Tuple2', _0: 'height', _1: height},
+					{ctor: '_Tuple2', _0: 'margin-top', _1: margin}
+				]));
 	});
-var _user$project$Ports$response = _elm_lang$core$Native_Platform.incomingPort('response', _elm_lang$core$Json_Decode$string);
+var _user$project$Components$point = function (str) {
+	return A2(
+		_elm_lang$html$Html$p,
+		_elm_lang$core$Native_List.fromArray(
+			[
+				_elm_lang$html$Html_Attributes$class('point small')
+			]),
+		_elm_lang$core$Native_List.fromArray(
+			[
+				_elm_lang$html$Html$text(str)
+			]));
+};
+var _user$project$Components$setHeight = function (str) {
+	return _elm_lang$html$Html_Attributes$style(
+		_elm_lang$core$Native_List.fromArray(
+			[
+				{ctor: '_Tuple2', _0: 'height', _1: str}
+			]));
+};
+var _user$project$Components$linkButton = F2(
+	function (label, destination) {
+		return A2(
+			_elm_lang$html$Html$a,
+			_elm_lang$core$Native_List.fromArray(
+				[
+					_elm_lang$html$Html_Attributes$class('button small'),
+					_elm_lang$html$Html_Attributes$href(destination)
+				]),
+			_elm_lang$core$Native_List.fromArray(
+				[
+					_elm_lang$html$Html$text(label)
+				]));
+	});
+var _user$project$Components$headerButton = function (str) {
+	return A2(
+		_elm_lang$html$Html$p,
+		_elm_lang$core$Native_List.fromArray(
+			[
+				_elm_lang$html$Html_Attributes$class('button'),
+				_elm_lang$html$Html_Events$onClick(
+				_user$project$Types$Navigate(str))
+			]),
+		_elm_lang$core$Native_List.fromArray(
+			[
+				_elm_lang$html$Html$text(str)
+			]));
+};
+var _user$project$Components$header = A2(
+	_elm_lang$html$Html$div,
+	_elm_lang$core$Native_List.fromArray(
+		[
+			_elm_lang$html$Html_Attributes$class('header-bar-container')
+		]),
+	_elm_lang$core$Native_List.fromArray(
+		[
+			A2(
+			_elm_lang$html$Html$div,
+			_elm_lang$core$Native_List.fromArray(
+				[
+					_elm_lang$html$Html_Attributes$class('header-bar')
+				]),
+			_elm_lang$core$Native_List.fromArray(
+				[
+					_user$project$Components$headerButton('Home'),
+					_user$project$Components$headerButton('About'),
+					_user$project$Components$headerButton('Services'),
+					_user$project$Components$headerButton('Contact')
+				]))
+		]));
 
-var _user$project$View$block = _elm_lang$html$Html$div(
+var _user$project$AboutPage$titleBlock = A2(
+	_elm_lang$html$Html$div,
+	_elm_lang$core$Native_List.fromArray(
+		[
+			A2(_user$project$Components$heightAndMargin, 'auto', '5px')
+		]),
+	_elm_lang$core$Native_List.fromArray(
+		[
+			A2(
+			_elm_lang$html$Html$p,
+			_elm_lang$core$Native_List.fromArray(
+				[
+					_elm_lang$html$Html_Attributes$class('point ignorable')
+				]),
+			_elm_lang$core$Native_List.fromArray(
+				[
+					_elm_lang$html$Html$text('About Program House')
+				]))
+		]));
+var _user$project$AboutPage$bodyBlock = A2(
+	_elm_lang$html$Html$div,
+	_elm_lang$core$Native_List.fromArray(
+		[
+			A2(_user$project$Components$heightAndMargin, 'auto', '0px')
+		]),
+	_elm_lang$core$Native_List.fromArray(
+		[
+			_user$project$Components$point('Program House was formed in October of 2016 by Chad \'Chadtech\' Stearns. Its a group of software developers who collaborate in the open source community largely based out of New York City and Phoenix. Its members actively socialize with the larger software profession, and regularly attend meet ups and hackathons.')
+		]));
+var _user$project$AboutPage$whoBlock = A2(
+	_elm_lang$html$Html$div,
+	_elm_lang$core$Native_List.fromArray(
+		[
+			A2(_user$project$Components$heightAndMargin, 'auto', '25px')
+		]),
+	_elm_lang$core$Native_List.fromArray(
+		[
+			A2(
+			_elm_lang$html$Html$p,
+			_elm_lang$core$Native_List.fromArray(
+				[
+					_elm_lang$html$Html_Attributes$class('point ignorable')
+				]),
+			_elm_lang$core$Native_List.fromArray(
+				[
+					_elm_lang$html$Html$text('The Team')
+				]))
+		]));
+var _user$project$AboutPage$chadtechBlock = A2(
+	_elm_lang$html$Html$div,
+	_elm_lang$core$Native_List.fromArray(
+		[
+			_elm_lang$html$Html_Attributes$class('chadtech-block')
+		]),
+	_elm_lang$core$Native_List.fromArray(
+		[
+			A2(
+			_elm_lang$html$Html$div,
+			_elm_lang$core$Native_List.fromArray(
+				[
+					_elm_lang$html$Html_Attributes$class('chadtech-links-container')
+				]),
+			_elm_lang$core$Native_List.fromArray(
+				[
+					A2(
+					_elm_lang$html$Html$p,
+					_elm_lang$core$Native_List.fromArray(
+						[
+							_elm_lang$html$Html_Attributes$class('chadtech-title')
+						]),
+					_elm_lang$core$Native_List.fromArray(
+						[
+							_elm_lang$html$Html$text('Chadtech')
+						])),
+					A2(_user$project$Components$linkButton, 'github', 'https://www.github.com/Chadtech'),
+					A2(_user$project$Components$linkButton, 'personal site', 'http://www.chadtech.us')
+				])),
+			A2(
+			_elm_lang$html$Html$div,
+			_elm_lang$core$Native_List.fromArray(
+				[
+					_elm_lang$html$Html_Attributes$class('chadtech-body')
+				]),
+			_elm_lang$core$Native_List.fromArray(
+				[
+					A2(
+					_elm_lang$html$Html$img,
+					_elm_lang$core$Native_List.fromArray(
+						[
+							_elm_lang$html$Html_Attributes$class('chadtech-pic'),
+							_elm_lang$html$Html_Attributes$src('./twitter-profile-pic.jpg')
+						]),
+					_elm_lang$core$Native_List.fromArray(
+						[])),
+					A2(
+					_elm_lang$html$Html$div,
+					_elm_lang$core$Native_List.fromArray(
+						[
+							_elm_lang$html$Html_Attributes$class('chadtech-text-container')
+						]),
+					_elm_lang$core$Native_List.fromArray(
+						[
+							_user$project$Components$point('Chadtech has been doing freelance software development for the last four years, working for various clients and with many different developers. Prior to doing software full time, he worked in the engineering department of the innovative consumer automobile manufacturer Local Motors. He earned his bachelor of science in Economics from the WP Carey school of business at ASU.')
+						]))
+				]))
+		]));
+var _user$project$AboutPage$view = A2(
+	_elm_lang$html$Html$div,
+	_elm_lang$core$Native_List.fromArray(
+		[
+			_elm_lang$html$Html_Attributes$class('root')
+		]),
+	_elm_lang$core$Native_List.fromArray(
+		[
+			A2(
+			_elm_lang$html$Html$div,
+			_elm_lang$core$Native_List.fromArray(
+				[
+					_elm_lang$html$Html_Attributes$class('main-container')
+				]),
+			_elm_lang$core$Native_List.fromArray(
+				[
+					A2(
+					_elm_lang$html$Html$div,
+					_elm_lang$core$Native_List.fromArray(
+						[
+							_elm_lang$html$Html_Attributes$class('main')
+						]),
+					_elm_lang$core$Native_List.fromArray(
+						[
+							_user$project$Components$header,
+							A2(
+							_elm_lang$html$Html$div,
+							_elm_lang$core$Native_List.fromArray(
+								[
+									_elm_lang$html$Html_Attributes$class('body borders')
+								]),
+							_elm_lang$core$Native_List.fromArray(
+								[_user$project$AboutPage$titleBlock, _user$project$AboutPage$bodyBlock, _user$project$AboutPage$whoBlock, _user$project$AboutPage$chadtechBlock]))
+						]))
+				]))
+		]));
+
+var _user$project$HomePage$introBlock = A2(
+	_elm_lang$html$Html$div,
 	_elm_lang$core$Native_List.fromArray(
 		[
 			_elm_lang$html$Html_Attributes$class('block')
-		]));
-var _user$project$View$titleBlock = _user$project$View$block(
-	_elm_lang$core$Native_List.fromArray(
-		[
-			A2(
-			_elm_lang$html$Html$p,
-			_elm_lang$core$Native_List.fromArray(
-				[
-					_elm_lang$html$Html_Attributes$class('point big blink')
-				]),
-			_elm_lang$core$Native_List.fromArray(
-				[
-					_elm_lang$html$Html$text('Program House')
-				])),
-			A2(
-			_elm_lang$html$Html$p,
-			_elm_lang$core$Native_List.fromArray(
-				[
-					_elm_lang$html$Html_Attributes$class('point blink')
-				]),
-			_elm_lang$core$Native_List.fromArray(
-				[
-					_elm_lang$html$Html$text('By Chadtech')
-				]))
-		]));
-var _user$project$View$aboutBlock = _user$project$View$block(
+		]),
 	_elm_lang$core$Native_List.fromArray(
 		[
 			A2(
@@ -8929,10 +9124,39 @@ var _user$project$View$aboutBlock = _user$project$View$block(
 				]),
 			_elm_lang$core$Native_List.fromArray(
 				[
-					_elm_lang$html$Html$text('Program House is a software development consulting company. We make applications and websites- anything that runs on a computer, and interacts with human beings. Software is our craft, and we are masters of it.')
+					_elm_lang$html$Html$text('Program House is a software development consulting company. We make applications and websites- anything that runs on a computer and interacts with human beings. Software is our discipline and craft. We are professionals. We are conscious of design, human experience, but also good engineering.')
 				]))
 		]));
-var _user$project$View$backgroundVideo = A2(
+var _user$project$HomePage$titleBlock = A2(
+	_elm_lang$html$Html$div,
+	_elm_lang$core$Native_List.fromArray(
+		[
+			_elm_lang$html$Html_Attributes$class('block')
+		]),
+	_elm_lang$core$Native_List.fromArray(
+		[
+			A2(
+			_elm_lang$html$Html$p,
+			_elm_lang$core$Native_List.fromArray(
+				[
+					_elm_lang$html$Html_Attributes$class('point big outline blink')
+				]),
+			_elm_lang$core$Native_List.fromArray(
+				[
+					_elm_lang$html$Html$text('Program House')
+				])),
+			A2(
+			_elm_lang$html$Html$p,
+			_elm_lang$core$Native_List.fromArray(
+				[
+					_elm_lang$html$Html_Attributes$class('point outline blink')
+				]),
+			_elm_lang$core$Native_List.fromArray(
+				[
+					_elm_lang$html$Html$text('By Chadtech')
+				]))
+		]));
+var _user$project$HomePage$backgroundVideo = A2(
 	_elm_lang$html$Html$div,
 	_elm_lang$core$Native_List.fromArray(
 		[
@@ -8954,132 +9178,113 @@ var _user$project$View$backgroundVideo = A2(
 					_elm_lang$html$Html$source,
 					_elm_lang$core$Native_List.fromArray(
 						[
-							_elm_lang$html$Html_Attributes$src('subway-clip.ogv'),
-							_elm_lang$html$Html_Attributes$type$('video/ogg')
-						]),
-					_elm_lang$core$Native_List.fromArray(
-						[])),
-					A2(
-					_elm_lang$html$Html$source,
-					_elm_lang$core$Native_List.fromArray(
-						[
-							_elm_lang$html$Html_Attributes$src('subway-clip.mp4'),
+							_elm_lang$html$Html_Attributes$src('ph-nyc-video.mp4'),
 							_elm_lang$html$Html_Attributes$type$('video/mp4')
 						]),
 					_elm_lang$core$Native_List.fromArray(
-						[])),
-					_elm_lang$html$Html$text('Didnt work')
+						[]))
 				]))
 		]));
-var _user$project$View$headerButton = F2(
-	function (str, msg) {
-		return A2(
-			_elm_lang$html$Html$p,
-			_elm_lang$core$Native_List.fromArray(
-				[
-					_elm_lang$html$Html_Attributes$class('header-button'),
-					_elm_lang$html$Html_Events$onClick(msg)
-				]),
-			_elm_lang$core$Native_List.fromArray(
-				[
-					_elm_lang$html$Html$text(str)
-				]));
-	});
-var _user$project$View$header = A2(
+var _user$project$HomePage$view = A2(
 	_elm_lang$html$Html$div,
 	_elm_lang$core$Native_List.fromArray(
 		[
-			_elm_lang$html$Html_Attributes$class('header-bar-container')
+			_elm_lang$html$Html_Attributes$class('root')
 		]),
 	_elm_lang$core$Native_List.fromArray(
 		[
+			_user$project$HomePage$backgroundVideo,
 			A2(
 			_elm_lang$html$Html$div,
 			_elm_lang$core$Native_List.fromArray(
 				[
-					_elm_lang$html$Html_Attributes$class('header-bar')
+					_elm_lang$html$Html_Attributes$class('main-container')
 				]),
 			_elm_lang$core$Native_List.fromArray(
 				[
 					A2(
-					_user$project$View$headerButton,
-					'Home',
-					_user$project$Types$Navigate('Home')),
-					A2(
-					_user$project$View$headerButton,
-					'About',
-					_user$project$Types$Navigate('About')),
-					A2(
-					_user$project$View$headerButton,
-					'Services',
-					_user$project$Types$Navigate('Services')),
-					A2(
-					_user$project$View$headerButton,
-					'Contact',
-					_user$project$Types$Navigate('Contact'))
+					_elm_lang$html$Html$div,
+					_elm_lang$core$Native_List.fromArray(
+						[
+							_elm_lang$html$Html_Attributes$class('main')
+						]),
+					_elm_lang$core$Native_List.fromArray(
+						[
+							_user$project$Components$header,
+							A2(
+							_elm_lang$html$Html$div,
+							_elm_lang$core$Native_List.fromArray(
+								[
+									_elm_lang$html$Html_Attributes$class('body')
+								]),
+							_elm_lang$core$Native_List.fromArray(
+								[_user$project$HomePage$titleBlock, _user$project$HomePage$introBlock]))
+						]))
 				]))
 		]));
-var _user$project$View$view = function (model) {
-	return A2(
-		_elm_lang$html$Html$div,
-		_elm_lang$core$Native_List.fromArray(
-			[
-				_elm_lang$html$Html_Attributes$class('root')
-			]),
-		_elm_lang$core$Native_List.fromArray(
-			[
-				_user$project$View$backgroundVideo,
-				A2(
-				_elm_lang$html$Html$div,
-				_elm_lang$core$Native_List.fromArray(
-					[
-						_elm_lang$html$Html_Attributes$class('main-container')
-					]),
-				_elm_lang$core$Native_List.fromArray(
-					[
-						A2(
-						_elm_lang$html$Html$div,
-						_elm_lang$core$Native_List.fromArray(
-							[
-								_elm_lang$html$Html_Attributes$class('main')
-							]),
-						_elm_lang$core$Native_List.fromArray(
-							[
-								_user$project$View$header,
-								A2(
-								_elm_lang$html$Html$div,
-								_elm_lang$core$Native_List.fromArray(
-									[
-										_elm_lang$html$Html_Attributes$class('body')
-									]),
-								_elm_lang$core$Native_List.fromArray(
-									[_user$project$View$titleBlock, _user$project$View$aboutBlock]))
-							]))
-					]))
-			]));
+
+var _user$project$Ports$request = _elm_lang$core$Native_Platform.outgoingPort(
+	'request',
+	function (v) {
+		return v;
+	});
+var _user$project$Ports$response = _elm_lang$core$Native_Platform.incomingPort('response', _elm_lang$core$Json_Decode$string);
+
+var _user$project$View$view = function (_p0) {
+	var _p1 = _p0;
+	var _p2 = _p1.page;
+	switch (_p2.ctor) {
+		case 'Home':
+			return _user$project$HomePage$view;
+		case 'About':
+			return _user$project$AboutPage$view;
+		default:
+			return _user$project$HomePage$view;
+	}
 };
-var _user$project$View$chadtech = 'HFNSSvector1, a new font by Chadtech';
-var _user$project$View$otherText = 'Remove loose change from your pockets before addressing the jury. Grab all the free pens and pencils you can.';
-var _user$project$View$text$ = 'I <- Thats how it looks.';
 
 var _user$project$Main$toUrl = function (_p0) {
 	var _p1 = _p0;
-	return A2(_elm_lang$core$Basics_ops['++'], '#/', _p1.page);
+	var page$ = function () {
+		var _p2 = _p1.page;
+		switch (_p2.ctor) {
+			case 'Home':
+				return 'Home';
+			case 'About':
+				return 'About';
+			case 'Services':
+				return 'Services';
+			default:
+				return 'Contact';
+		}
+	}();
+	return A2(_elm_lang$core$Basics_ops['++'], '#/', page$);
 };
 var _user$project$Main$fromUrl = function (url) {
-	return _user$project$Types$Model(
-		A3(
-			_elm_lang$core$String$slice,
-			2,
-			_elm_lang$core$String$length(url),
-			url));
+	var page$ = function () {
+		var length$ = _elm_lang$core$String$length(url);
+		var _p3 = A3(_elm_lang$core$String$slice, 2, length$, url);
+		switch (_p3) {
+			case 'Home':
+				return _user$project$Types$Home;
+			case 'About':
+				return _user$project$Types$About;
+			case 'Services':
+				return _user$project$Types$Services;
+			case 'Contact':
+				return _user$project$Types$Contact;
+			default:
+				return _user$project$Types$Home;
+		}
+	}();
+	return _user$project$Types$Model(page$);
 };
 var _user$project$Main$urlParser = _elm_lang$navigation$Navigation$makeParser(
-	function (_p2) {
+	function (_p4) {
 		return _user$project$Main$fromUrl(
 			function (_) {
 				return _.hash;
-			}(_p2));
+			}(_p4));
 	});
 var _user$project$Main$urlUpdate = F2(
 	function (model$, model) {
@@ -9087,12 +9292,12 @@ var _user$project$Main$urlUpdate = F2(
 	});
 var _user$project$Main$update = F2(
 	function (message, model) {
-		var _p3 = message;
+		var _p5 = message;
 		return {
 			ctor: '_Tuple2',
 			_0: model,
 			_1: _elm_lang$navigation$Navigation$newUrl(
-				A2(_elm_lang$core$Basics_ops['++'], '#/', _p3._0))
+				A2(_elm_lang$core$Basics_ops['++'], '#/', _p5._0))
 		};
 	});
 var _user$project$Main$subscriptions = function (model) {
@@ -9102,7 +9307,7 @@ var _user$project$Main$init = function (model) {
 	return A2(
 		_user$project$Main$urlUpdate,
 		model,
-		_user$project$Types$Model('Home'));
+		_user$project$Types$Model(_user$project$Types$Home));
 };
 var _user$project$Main$main = {
 	main: A2(
@@ -9112,6 +9317,12 @@ var _user$project$Main$main = {
 };
 
 var Elm = {};
+Elm['AboutPage'] = Elm['AboutPage'] || {};
+_elm_lang$core$Native_Platform.addPublicModule(Elm['AboutPage'], 'AboutPage', typeof _user$project$AboutPage$main === 'undefined' ? null : _user$project$AboutPage$main);
+Elm['Components'] = Elm['Components'] || {};
+_elm_lang$core$Native_Platform.addPublicModule(Elm['Components'], 'Components', typeof _user$project$Components$main === 'undefined' ? null : _user$project$Components$main);
+Elm['HomePage'] = Elm['HomePage'] || {};
+_elm_lang$core$Native_Platform.addPublicModule(Elm['HomePage'], 'HomePage', typeof _user$project$HomePage$main === 'undefined' ? null : _user$project$HomePage$main);
 Elm['Main'] = Elm['Main'] || {};
 _elm_lang$core$Native_Platform.addPublicModule(Elm['Main'], 'Main', typeof _user$project$Main$main === 'undefined' ? null : _user$project$Main$main);
 Elm['Ports'] = Elm['Ports'] || {};

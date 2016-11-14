@@ -1,6 +1,6 @@
 @font-face {
   font-family: HFNSSV;
-  src: url("./HFNSSvector0.ttf");
+  src: url("./HFNSSvector1.ttf");
 }
 body {
   margin: 0;
@@ -12,7 +12,6 @@ body {
   color: #b0a69a;
   font-size: 4em;
   margin: 0;
-  margin-bottom: 20px;
   line-height: 1em;
 }
 .point.big {
@@ -22,15 +21,21 @@ body {
 .point.sub-header {
   text-align: center;
 }
+.point.outline {
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
 .point.small {
   font-size: 2em;
 }
 .point.blue {
   color: #175cfe;
 }
+.point.ignorable {
+  color: #54574d;
+}
 .point.blink {
-  animation: blink-animation 3s steps(3, start) infinite;
-  -webkit-animation: blink-animation 3s steps(3, start) infinite;
+  animation: blink-animation 5s steps(3, start) infinite;
+  -webkit-animation: blink-animation 5s steps(3, start) infinite;
 }
 .main-container {
   width: 100%;
@@ -59,20 +64,27 @@ body {
   display: flex;
   justify-content: space-between;
 }
-.header-button {
+.button {
   font-family: HFNSSV;
   color: #b39f4b;
   font-size: 3em;
   margin: 8px;
   float: left;
   cursor: pointer;
+  text-decoration: none;
 }
-.header-button:hover {
+.button.small {
+  font-size: 2em;
+  margin-left: 0px;
+  margin-right: 16px;
+}
+.button:hover {
   color: #e3d34b;
 }
 .main-video {
-  width: 100%;
   min-height: 400px;
+  width: 100%;
+  min-width: 1440px;
 }
 .body {
   position: absolute;
@@ -82,6 +94,43 @@ body {
 .block {
   margin-top: 100px;
   height: 450px;
+}
+.chadtech-title {
+  font-family: HFNSSV;
+  color: #807872;
+  font-size: 2em;
+  margin: 8px;
+  float: left;
+  text-decoration: none;
+  margin-left: 0px;
+  margin-right: 32px;
+}
+.chadtech-block {
+  height: 200px;
+  position: relative;
+}
+.chadtech-pic {
+  border: 2px solid #54574d;
+  height: 250px;
+  margin-top: -39px;
+  width: auto;
+}
+.chadtech-text-container {
+  position: absolute;
+  left: 259px;
+  top: 0px;
+}
+.chadtech-links-container {
+  position: absolute;
+  left: 259px;
+  top: 0px;
+  width: 500px;
+  justify-content: space-between;
+}
+.chadtech-body {
+  top: 40px;
+  position: absolute;
+  width: 100%;
 }
 .background-video {
   width: 100%;

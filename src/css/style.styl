@@ -23,7 +23,7 @@ i3 = #131610
 
 @font-face
   font-family HFNSSV
-  src url("./HFNSSvector0.ttf")
+  src url("./HFNSSvector1.ttf")
 
 body
   margin 0
@@ -35,20 +35,28 @@ body
   color pointColor
   font-size 4em
   margin 0
-  margin-bottom 20px
+  // margin-bottom 20px
   line-height 1em
   &.big
     font-size 11em
     text-align center
   &.sub-header
     text-align center
+  &.outline
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000 
   &.small
     font-size 2em
   &.blue
     color prettyBlue
+  &.ignorable
+    color veryIgnorable
   &.blink
-    animation: blink-animation 3s steps(3, start) infinite;
-    -webkit-animation: blink-animation 3s steps(3, start) infinite;
+    animation: blink-animation 5s steps(3, start) infinite;
+    -webkit-animation: blink-animation 5s steps(3, start) infinite;
 
 .main-container
   width 100%
@@ -77,35 +85,82 @@ body
   display flex
   justify-content space-between
 
-.header-button
+.button
   font-family HFNSSV
   color importantText
   font-size 3em
   margin 8px
   float left
   cursor pointer
+  text-decoration none
+  &.small
+    font-size 2em
+    margin-left 0px
+    margin-right 16px
   &:hover
     color importanterText
     
 .main-video
-  width 100%
+  // width 100%
   min-height 400px
-  
+  width 100%
+  min-width 1440px
+
+
 .body
   position absolute
   width 1000px
   top 0
+  // border-right 2px solid veryIgnorable
+  // border-left 2px solid veryIgnorable 
 
 .block
   margin-top 100px
   height 450px
+  
+.chadtech-title
+  font-family HFNSSV
+  color ignorable
+  font-size 2em
+  margin 8px
+  float left
+  text-decoration none
+  margin-left 0px
+  margin-right 32px
+
+.chadtech-block
+  height 200px
+  position relative
+  
+.chadtech-pic
+  border 2px solid veryIgnorable
+  height 250px
+  margin-top -39px
+  width auto
+  
+.chadtech-text-container
+  position absolute
+  left 259px
+  top 0px
+  
+.chadtech-links-container
+  position absolute
+  left 259px
+  top 0px
+  width 500px
+  justify-content space-between
+  
+.chadtech-body
+  top 40px
+  position absolute
+  width 100%
 
 .background-video
   width 100%
   height 650px
   overflow hidden
   border-bottom 2px solid veryIgnorable
-
+  // z-index 6
 
 @keyframes blink-animation {
   from {

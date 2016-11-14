@@ -19,7 +19,7 @@ main =
 
 init : Model  -> (Model, Cmd Msg)
 init model =
-  urlUpdate model (Model "Home")
+  urlUpdate model (Model Home)
 
 subscriptions : Model -> Sub Msg
 subscriptions model = Sub.none
@@ -44,10 +44,28 @@ urlParser =
 
 fromUrl : String -> Model
 fromUrl url =
-  Model (slice 2 (length url) url)
+  let 
+    page' =
+      let length' = length url in
+      case slice 2 (length') url of
+        "Home" -> Home
+        "About" -> About
+        "Services" -> Services
+        "Contact" -> Contact
+        _ -> Home
+  in
+  Model page'
 
 
 toUrl : Model -> String
 toUrl {page} =
-  "#/" ++ page
+  let
+    page' =
+      case page of
+        Home -> "Home"
+        About -> "About"
+        Services -> "Services"
+        Contact -> "Contact"
+  in
+  "#/" ++ page'
 
