@@ -6,15 +6,15 @@ import Html.Events      exposing (..)
 import Types            exposing (..)
 import Components       exposing (..)
 
-view : Html Msg
-view =
+view : Page -> Html Msg
+view page =
   div
   [ class "root" ]
   [ div 
     [ class "main-container" ]
     [ div 
       [ class "main" ]
-      [ Components.header
+      [ Components.header page
       , div
         [ class "body borders" ]
         [ titleBlock 
@@ -23,6 +23,7 @@ view =
         , chadtechBlock
         ]
       ]
+    , Components.footer
     ]
   ]
 
@@ -64,7 +65,7 @@ bodyBlock : Html Msg
 bodyBlock =
   div 
   [ heightAndMargin "auto" "0px" ] 
-  [ point "Program House was formed in October of 2016 by Chad 'Chadtech' Stearns. Its a group of software developers who collaborate in the open source community largely based out of New York City and Phoenix. Its members actively socialize with the larger software profession, and regularly attend meet ups and hackathons."
+  [ point "Program House was formed in October of 2016 by Chad 'Chadtech' Stearns. It's members actively socialize with the larger software profession, regularly attend meet-ups and hackathons, and contribute to the open source community."
   ]
 
 titleBlock : Html Msg
@@ -73,7 +74,7 @@ titleBlock =
   [ heightAndMargin "auto" "5px" ]
   [ p
     [ class "point ignorable" ]
-    [ text "About Program House" ] 
+    [ text "Program House" ] 
   ]
 
 

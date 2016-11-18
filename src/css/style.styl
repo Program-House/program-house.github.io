@@ -30,13 +30,23 @@ body
   padding 0
   background-color almostBlack
   
+.footer-text
+  color pointColor
+  text-align center
+  font-size 4em
+  font-family HFNSSV
+  margin-bottom 0px
+  margin-top 50px
+  
+  
 .point
   font-family HFNSSV
   color pointColor
   font-size 4em
   margin 0
-  // margin-bottom 20px
   line-height 1em
+  &.lil-big
+    font-size 6em
   &.big
     font-size 11em
     text-align center
@@ -47,7 +57,9 @@ body
     -1px -1px 0 #000,
     1px -1px 0 #000,
     -1px 1px 0 #000,
-    1px 1px 0 #000 
+    1px 1px 0 #000
+  &.lil-small
+    font-size 3em 
   &.small
     font-size 2em
   &.blue
@@ -63,11 +75,36 @@ body
   position absolute
   top 50px
   left 0px
+  // // height auto
+  // position absolute
+  // top 50px
+  // left 0px
+    
+.root
+  min-height 100%
 
 .main
   width 1000px
-  height 100%
-  margin auto
+  margin-left auto
+  margin-right auto
+  min-height 100%
+  // display block
+  
+.body
+  // position absolute
+  width 1000px
+  // top 0
+  margin-top 50px
+  margin-bottom 100px
+  
+.footer-buffer
+  width 100%
+  height 200px
+  border-top 1px solid i3
+  background backgroundx2
+  // display block
+  // position absolute
+  // bottom 0
   
 .header-bar-container
   position fixed
@@ -75,8 +112,8 @@ body
   left 0
   width 100%
   height 50px
-  border-bottom 2px solid veryIgnorable
-  background almostBlack
+  border-bottom 1px solid i3
+  background backgroundx2
   z-index 5
   
 .header-bar
@@ -97,22 +134,25 @@ body
     font-size 2em
     margin-left 0px
     margin-right 16px
+  &.lit
+    color importanterText
   &:hover
     color importanterText
+  &.footer
+    float none
+    text-align center
     
 .main-video
-  // width 100%
   min-height 400px
   width 100%
   min-width 1440px
+  
+.services-video
+  width 996px
+  height auto
+  border 2px solid veryIgnorable
 
 
-.body
-  position absolute
-  width 1000px
-  top 0
-  // border-right 2px solid veryIgnorable
-  // border-left 2px solid veryIgnorable 
 
 .block
   margin-top 100px
@@ -160,7 +200,15 @@ body
   height 650px
   overflow hidden
   border-bottom 2px solid veryIgnorable
+  &.short
+    height 425px
+    width 1000px
   // z-index 6
+    
+.services-video-container
+  padding-top -100px
+  // margin-top 200px
+  // border-top 2px solid veryIgnorable
 
 @keyframes blink-animation {
   from {

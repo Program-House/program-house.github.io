@@ -1,0 +1,1 @@
+The public folder is the root of the surge project.

@@ -4,24 +4,25 @@ import Html             exposing (..)
 import Html.Attributes  exposing (..)
 import Html.Events      exposing (..)
 import Types            exposing (..)
-import Components
+import Components       exposing (..)
 
-view : Html Msg
-view =
+view : Page -> Html Msg
+view page =
   div
   [ class "root" ]
   [ backgroundVideo
   , div 
-    [ class "main-container" ]
+    [ class "main-container home" ]
     [ div 
       [ class "main" ]
-      [ Components.header
+      [ Components.header page
       , div
         [ class "body" ]
         [ titleBlock
         , introBlock
         ]
       ]
+    , Components.footer
     ]
   ]
 
@@ -35,7 +36,7 @@ backgroundVideo =
     , class "main-video"
     ] 
     [ source 
-      [ src "ph-nyc-video.mp4", type' "video/mp4" ] 
+      [ src "ph-nyc-video.webm", type' "video/webm" ] 
       [] 
     ]
   ]
@@ -53,7 +54,7 @@ titleBlock =
 
 introBlock : Html Msg
 introBlock =
-  div [ class "block" ]
-  [ p [ class "point small" ] [ text "Program House is a software development consulting company. We make applications and websites- anything that runs on a computer and interacts with human beings. Software is our discipline and craft. We are professionals. We are conscious of design, human experience, but also good engineering."]]
+  div [ heightAndMargin "auto" "100px" ]
+  [ p [ class "point lil-small" ] [ text "Program House is a software development and consulting company. We make applications and websites for our clients. Software is our discipline and craft. We are professionals. We are conscious of the fact that the user experience is what matters in software, and that is what we engineer."]]
 
 

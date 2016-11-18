@@ -6,13 +6,21 @@ import Html.Events      exposing (..)
 import Types            exposing (..)
 import HomePage
 import AboutPage
-import Debug
+import ServicesPage
+import ContactPage
 
 view : Model -> Html Msg
 view {page} =
   case page of
-    Home -> HomePage.view
+    Home -> 
+      HomePage.view page
 
-    About -> AboutPage.view
+    About -> 
+      AboutPage.view page
 
-    _ -> HomePage.view
+    Services -> 
+      ServicesPage.view page
+
+    Contact ->
+      ContactPage.view page
+
