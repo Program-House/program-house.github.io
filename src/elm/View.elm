@@ -10,17 +10,17 @@ import ServicesPage
 import ContactPage
 
 view : Model -> Html Msg
-view {page} =
-  case page of
+view model =
+  case model.page of
     Home -> 
-      HomePage.view page
+      HomePage.view model
 
     About -> 
-      AboutPage.view page
+      AboutPage.view model
 
     Services -> 
-      ServicesPage.view page
+      ServicesPage.view model
 
     Contact ->
-      ContactPage.view page
+      ContactPage.view model
 

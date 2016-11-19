@@ -8875,9 +8875,10 @@ var _elm_lang$navigation$Navigation$subMap = F2(
 	});
 _elm_lang$core$Native_Platform.effectManagers['Navigation'] = {pkg: 'elm-lang/navigation', init: _elm_lang$navigation$Navigation$init, onEffects: _elm_lang$navigation$Navigation$onEffects, onSelfMsg: _elm_lang$navigation$Navigation$onSelfMsg, tag: 'fx', cmdMap: _elm_lang$navigation$Navigation$cmdMap, subMap: _elm_lang$navigation$Navigation$subMap};
 
-var _user$project$Types$Model = function (a) {
-	return {page: a};
-};
+var _user$project$Types$Model = F2(
+	function (a, b) {
+		return {page: a, reglMount: b};
+	});
 var _user$project$Types$Navigate = function (a) {
 	return {ctor: 'Navigate', _0: a};
 };
@@ -9132,7 +9133,19 @@ var _user$project$AboutPage$chadtechBlock = A2(
 						]))
 				]))
 		]));
-var _user$project$AboutPage$view = function (page) {
+var _user$project$AboutPage$backgroundVideo = function (reglMount) {
+	return A2(
+		_elm_lang$html$Html$div,
+		_elm_lang$core$Native_List.fromArray(
+			[
+				_elm_lang$html$Html_Attributes$class('regl-mount'),
+				_elm_lang$html$Html_Attributes$id(reglMount)
+			]),
+		_elm_lang$core$Native_List.fromArray(
+			[]));
+};
+var _user$project$AboutPage$view = function (_p0) {
+	var _p1 = _p0;
 	return A2(
 		_elm_lang$html$Html$div,
 		_elm_lang$core$Native_List.fromArray(
@@ -9149,6 +9162,7 @@ var _user$project$AboutPage$view = function (page) {
 					]),
 				_elm_lang$core$Native_List.fromArray(
 					[
+						_user$project$AboutPage$backgroundVideo(_p1.reglMount),
 						A2(
 						_elm_lang$html$Html$div,
 						_elm_lang$core$Native_List.fromArray(
@@ -9157,7 +9171,7 @@ var _user$project$AboutPage$view = function (page) {
 							]),
 						_elm_lang$core$Native_List.fromArray(
 							[
-								_user$project$Components$header(page),
+								_user$project$Components$header(_p1.page),
 								A2(
 								_elm_lang$html$Html$div,
 								_elm_lang$core$Native_List.fromArray(
@@ -9201,7 +9215,8 @@ var _user$project$ContactPage$titleBlock = A2(
 					_elm_lang$html$Html$text('Get in touch')
 				]))
 		]));
-var _user$project$ContactPage$view = function (page) {
+var _user$project$ContactPage$view = function (_p0) {
+	var _p1 = _p0;
 	return A2(
 		_elm_lang$html$Html$div,
 		_elm_lang$core$Native_List.fromArray(
@@ -9226,7 +9241,7 @@ var _user$project$ContactPage$view = function (page) {
 							]),
 						_elm_lang$core$Native_List.fromArray(
 							[
-								_user$project$Components$header(page),
+								_user$project$Components$header(_p1.page),
 								A2(
 								_elm_lang$html$Html$div,
 								_elm_lang$core$Native_List.fromArray(
@@ -9321,7 +9336,8 @@ var _user$project$HomePage$backgroundVideo = A2(
 						[]))
 				]))
 		]));
-var _user$project$HomePage$view = function (page) {
+var _user$project$HomePage$view = function (_p0) {
+	var _p1 = _p0;
 	return A2(
 		_elm_lang$html$Html$div,
 		_elm_lang$core$Native_List.fromArray(
@@ -9347,7 +9363,7 @@ var _user$project$HomePage$view = function (page) {
 							]),
 						_elm_lang$core$Native_List.fromArray(
 							[
-								_user$project$Components$header(page),
+								_user$project$Components$header(_p1.page),
 								A2(
 								_elm_lang$html$Html$div,
 								_elm_lang$core$Native_List.fromArray(
@@ -9362,12 +9378,16 @@ var _user$project$HomePage$view = function (page) {
 			]));
 };
 
-var _user$project$Ports$request = _elm_lang$core$Native_Platform.outgoingPort(
-	'request',
+var _user$project$Ports$mountRegl = _elm_lang$core$Native_Platform.outgoingPort(
+	'mountRegl',
 	function (v) {
 		return v;
 	});
-var _user$project$Ports$response = _elm_lang$core$Native_Platform.incomingPort('response', _elm_lang$core$Json_Decode$string);
+var _user$project$Ports$unmountRegl = _elm_lang$core$Native_Platform.outgoingPort(
+	'unmountRegl',
+	function (v) {
+		return null;
+	});
 
 var _user$project$ServicesPage$servicesBlock = A2(
 	_elm_lang$html$Html$div,
@@ -9497,7 +9517,8 @@ var _user$project$ServicesPage$backgroundVideo = A2(
 						[]))
 				]))
 		]));
-var _user$project$ServicesPage$view = function (page) {
+var _user$project$ServicesPage$view = function (_p0) {
+	var _p1 = _p0;
 	return A2(
 		_elm_lang$html$Html$div,
 		_elm_lang$core$Native_List.fromArray(
@@ -9522,7 +9543,7 @@ var _user$project$ServicesPage$view = function (page) {
 							]),
 						_elm_lang$core$Native_List.fromArray(
 							[
-								_user$project$Components$header(page),
+								_user$project$Components$header(_p1.page),
 								A2(
 								_elm_lang$html$Html$div,
 								_elm_lang$core$Native_List.fromArray(
@@ -9537,19 +9558,17 @@ var _user$project$ServicesPage$view = function (page) {
 			]));
 };
 
-var _user$project$View$view = function (_p0) {
-	var _p1 = _p0;
-	var _p3 = _p1.page;
-	var _p2 = _p3;
-	switch (_p2.ctor) {
+var _user$project$View$view = function (model) {
+	var _p0 = model.page;
+	switch (_p0.ctor) {
 		case 'Home':
-			return _user$project$HomePage$view(_p3);
+			return _user$project$HomePage$view(model);
 		case 'About':
-			return _user$project$AboutPage$view(_p3);
+			return _user$project$AboutPage$view(model);
 		case 'Services':
-			return _user$project$ServicesPage$view(_p3);
+			return _user$project$ServicesPage$view(model);
 		default:
-			return _user$project$ContactPage$view(_p3);
+			return _user$project$ContactPage$view(model);
 	}
 };
 
@@ -9587,7 +9606,7 @@ var _user$project$Main$fromUrl = function (url) {
 				return _user$project$Types$Home;
 		}
 	}();
-	return _user$project$Types$Model(page$);
+	return {page: page$, reglMount: 'regl-mount'};
 };
 var _user$project$Main$urlParser = _elm_lang$navigation$Navigation$makeParser(
 	function (_p4) {
@@ -9598,7 +9617,16 @@ var _user$project$Main$urlParser = _elm_lang$navigation$Navigation$makeParser(
 	});
 var _user$project$Main$urlUpdate = F2(
 	function (model$, model) {
-		return {ctor: '_Tuple2', _0: model$, _1: _elm_lang$core$Platform_Cmd$none};
+		return _elm_lang$core$Native_Utils.eq(model$.page, _user$project$Types$About) ? {
+			ctor: '_Tuple2',
+			_0: model$,
+			_1: _user$project$Ports$mountRegl(model.reglMount)
+		} : (_elm_lang$core$Native_Utils.eq(model.page, _user$project$Types$About) ? {
+			ctor: '_Tuple2',
+			_0: model$,
+			_1: _user$project$Ports$unmountRegl(
+				{ctor: '_Tuple0'})
+		} : {ctor: '_Tuple2', _0: model$, _1: _elm_lang$core$Platform_Cmd$none});
 	});
 var _user$project$Main$update = F2(
 	function (message, model) {
@@ -9617,7 +9645,7 @@ var _user$project$Main$init = function (model) {
 	return A2(
 		_user$project$Main$urlUpdate,
 		model,
-		_user$project$Types$Model(_user$project$Types$Home));
+		{page: _user$project$Types$Home, reglMount: 'regl-mount'});
 };
 var _user$project$Main$main = {
 	main: A2(

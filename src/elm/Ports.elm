@@ -2,6 +2,10 @@ port module Ports exposing (..)
 
 import Types exposing (..)
 
-port request : String -> Cmd msg
+port mountRegl : String -> Cmd msg
 
-port response : (String -> msg) -> Sub msg
+port unmountRegl : () -> Cmd msg
+
+--port request : String -> Cmd msg
+
+--port response : (String -> msg) -> Sub msg

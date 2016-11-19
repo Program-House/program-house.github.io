@@ -19,7 +19,9 @@ main =
 
 init : Model  -> (Model, Cmd Msg)
 init model =
-  urlUpdate model (Model Home)
+  urlUpdate 
+    model 
+    { page =  Home, reglMount = "regl-mount" }
 
 subscriptions : Model -> Sub Msg
 subscriptions model = Sub.none
@@ -34,7 +36,13 @@ update message model =
 
 urlUpdate : Model -> Model -> (Model, Cmd Msg)
 urlUpdate model' model =
-  (model', Cmd.none)
+  if model'.page == About then
+    (model', mountRegl model.reglMount)
+  else
+    if model.page == About then
+      (model', unmountRegl ())
+    else
+      (model', Cmd.none)
 
 
 urlParser : Parser Model
@@ -54,7 +62,7 @@ fromUrl url =
         "Contact" -> Contact
         _ -> Home
   in
-  Model page'
+  { page =  page', reglMount = "regl-mount" }
 
 
 toUrl : Model -> String

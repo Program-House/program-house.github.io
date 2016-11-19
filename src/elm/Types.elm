@@ -10,4 +10,6 @@ type Page
   | Contact
 
 type alias Model =
-  { page  : Page }
+  { page      : Page 
+  , reglMount : String
+  }

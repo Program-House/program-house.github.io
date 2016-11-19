@@ -7,8 +7,8 @@ import Types            exposing (..)
 import Components       exposing (..)
 
 
-view : Page -> Html Msg
-view page =
+view : Model -> Html Msg
+view {page} =
   div
   [ class "root" ]
   [ div 

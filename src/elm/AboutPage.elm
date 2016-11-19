@@ -6,13 +6,14 @@ import Html.Events      exposing (..)
 import Types            exposing (..)
 import Components       exposing (..)
 
-view : Page -> Html Msg
-view page =
+view : Model -> Html Msg
+view {page, reglMount} =
   div
   [ class "root" ]
   [ div 
     [ class "main-container" ]
-    [ div 
+    [ backgroundVideo reglMount
+    , div 
       [ class "main" ]
       [ Components.header page
       , div
@@ -26,6 +27,14 @@ view page =
     , Components.footer
     ]
   ]
+
+backgroundVideo : String -> Html Msg
+backgroundVideo reglMount =
+  div
+  [ class "regl-mount" 
+  , id reglMount
+  ]
+  []
 
 chadtechBlock : Html Msg
 chadtechBlock =
