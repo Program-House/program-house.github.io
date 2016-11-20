@@ -4,7 +4,11 @@ mat4        = require 'gl-mat4'
 bunny       = require 'bunny'
 normals     = require 'angle-normals'
 
-# envmap      = regl.texture()
+window.onkeydown = (e) ->
+  if e.keyCode is 32 
+    if e.target is document.body 
+      e.preventDefault()
+      false
 
 app         = Elm.Main.fullscreen()
 {mountRegl, unmountRegl} = app.ports

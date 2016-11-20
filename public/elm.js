@@ -8958,6 +8958,25 @@ var _user$project$Components$footer = A2(
 					_elm_lang$html$Html$text('Lets get in contact')
 				]))
 		]));
+var _user$project$Components$bigLinkButton = F2(
+	function (label, destination) {
+		return A2(
+			_elm_lang$html$Html$a,
+			_elm_lang$core$Native_List.fromArray(
+				[
+					_elm_lang$html$Html_Attributes$class('button'),
+					_elm_lang$html$Html_Attributes$style(
+					_elm_lang$core$Native_List.fromArray(
+						[
+							{ctor: '_Tuple2', _0: 'margin-left', _1: '0px'}
+						])),
+					_elm_lang$html$Html_Attributes$href(destination)
+				]),
+			_elm_lang$core$Native_List.fromArray(
+				[
+					_elm_lang$html$Html$text(label)
+				]));
+	});
 var _user$project$Components$linkButton = F2(
 	function (label, destination) {
 		return A2(
@@ -9194,7 +9213,7 @@ var _user$project$ContactPage$bodyBlock = A2(
 		]),
 	_elm_lang$core$Native_List.fromArray(
 		[
-			_user$project$Components$point('Program House looks forward to talking with you. We guarantee that we can help you out, even if thats just connecting you with the right people. You can reach out to us through the following email:.')
+			_user$project$Components$point('Program House looks forward to talking with you. We guarantee that we can help you out, even if thats just connecting you with the right people. You can reach out to us through the following email:')
 		]));
 var _user$project$ContactPage$titleBlock = A2(
 	_elm_lang$html$Html$div,
@@ -9214,6 +9233,24 @@ var _user$project$ContactPage$titleBlock = A2(
 				[
 					_elm_lang$html$Html$text('Get in touch')
 				]))
+		]));
+var _user$project$ContactPage$orbiterGame = A2(
+	_elm_lang$html$Html$div,
+	_elm_lang$core$Native_List.fromArray(
+		[
+			A2(_user$project$Components$heightAndMargin, 'auto', '150px')
+		]),
+	_elm_lang$core$Native_List.fromArray(
+		[
+			A2(
+			_elm_lang$html$Html$iframe,
+			_elm_lang$core$Native_List.fromArray(
+				[
+					_elm_lang$html$Html_Attributes$class('orbiter-game'),
+					_elm_lang$html$Html_Attributes$src('http://www.chadtech.us/orbiter-13')
+				]),
+			_elm_lang$core$Native_List.fromArray(
+				[]))
 		]));
 var _user$project$ContactPage$view = function (_p0) {
 	var _p1 = _p0;
@@ -9252,7 +9289,8 @@ var _user$project$ContactPage$view = function (_p0) {
 									[
 										_user$project$ContactPage$titleBlock,
 										_user$project$ContactPage$bodyBlock,
-										A2(_user$project$Components$linkButton, 'hello@programhouse.us', 'mailto:hello@programhouse.us')
+										A2(_user$project$Components$bigLinkButton, 'chadtech0@gmail.com', 'mailto:chadtech0@gmail.com'),
+										_user$project$ContactPage$orbiterGame
 									]))
 							]))
 					]))

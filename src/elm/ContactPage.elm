@@ -20,12 +20,24 @@ view {page} =
         [ class "body" ]
         [ titleBlock
         , bodyBlock
-        , linkButton "hello@programhouse.us" "mailto:hello@programhouse.us"
+        --, bigLinkButton "hello@programhouse.us" "mailto:hello@programhouse.us"
+        , bigLinkButton "chadtech0@gmail.com" "mailto:chadtech0@gmail.com"
+        , orbiterGame
         ]  
       ]
     ]
   ]
 
+orbiterGame : Html Msg
+orbiterGame =
+  div
+  [ heightAndMargin "auto" "150px" ]
+  [ iframe
+    [ class "orbiter-game"
+    , src "http://www.chadtech.us/orbiter-13" 
+    ]
+    []
+  ]
 
 titleBlock : Html Msg
 titleBlock =
@@ -40,5 +52,5 @@ bodyBlock : Html Msg
 bodyBlock =
   div 
   [ heightAndMargin "auto" "0px" ] 
-  [ point "Program House looks forward to talking with you. We guarantee that we can help you out, even if thats just connecting you with the right people. You can reach out to us through the following email:."
+  [ point "Program House looks forward to talking with you. We guarantee that we can help you out, even if thats just connecting you with the right people. You can reach out to us through the following email:"
   ]

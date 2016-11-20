@@ -47,6 +47,15 @@ linkButton label destination =
   ]
   [ text label ]
 
+bigLinkButton : String -> String -> Html Msg
+bigLinkButton label destination =
+  a 
+  [ class "button" 
+  , style [ ("margin-left", "0px") ]
+  , href destination
+  ]
+  [ text label ]
+
 footer : Html Msg
 footer =
   div 
