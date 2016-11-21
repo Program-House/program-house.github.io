@@ -9452,7 +9452,7 @@ var _user$project$ServicesPage$servicesBlock = A2(
 			_elm_lang$core$Native_List.fromArray(
 				[])),
 			_user$project$Components$headerPoint('Existing Code'),
-			_user$project$Components$point('Youve already got an existing code base you need work on? No problem. We can pick up the project in whatever state it is in now.'),
+			_user$project$Components$point('You\'ve already got an existing code base you need work on? No problem. We can pick up the project in whatever state it is in now.'),
 			A2(
 			_elm_lang$html$Html$br,
 			_elm_lang$core$Native_List.fromArray(
@@ -9476,7 +9476,13 @@ var _user$project$ServicesPage$servicesBlock = A2(
 			_elm_lang$core$Native_List.fromArray(
 				[])),
 			_user$project$Components$headerPoint('Training and Consulting'),
-			_user$project$Components$point('Maybe you don\'t even know what you need. Program House can give you advice, or teach your team the skills they need to move forward.')
+			_user$project$Components$point('Maybe you don\'t even know what you need. Program House can give you advice, or teach your team the skills they need to move forward.'),
+			A2(
+			_elm_lang$html$Html$br,
+			_elm_lang$core$Native_List.fromArray(
+				[]),
+			_elm_lang$core$Native_List.fromArray(
+				[]))
 		]));
 var _user$project$ServicesPage$introBlock = A2(
 	_elm_lang$html$Html$div,
@@ -9589,7 +9595,7 @@ var _user$project$ServicesPage$view = function (_p0) {
 										_elm_lang$html$Html_Attributes$class('body')
 									]),
 								_elm_lang$core$Native_List.fromArray(
-									[_user$project$ServicesPage$introBlock, _user$project$ServicesPage$videoBlock, _user$project$ServicesPage$servicesBlock]))
+									[_user$project$ServicesPage$introBlock, _user$project$ServicesPage$servicesBlock, _user$project$ServicesPage$videoBlock]))
 							])),
 						_user$project$Components$footer
 					]))

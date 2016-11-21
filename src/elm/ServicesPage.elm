@@ -18,8 +18,8 @@ view {page} =
       , div
         [ class "body" ]
         [ introBlock
-        , videoBlock
         , servicesBlock
+        , videoBlock
         ]
       ]
     , Components.footer  
@@ -62,7 +62,8 @@ introBlock =
   [ heightAndMargin "auto" "15px" ]
   [ p
     [ class "point lil-big" ]
-    [ text "Program House can help." ] 
+    [ text "Program House can help." ]
+  --, point ""
   ]
 
 servicesBlock : Html Msg
@@ -76,7 +77,7 @@ servicesBlock =
   , point "If your project needs users and messages and complicated interactions between them that's okay. Thats what we are good at."
   , br [] []
   , headerPoint "Existing Code"
-  , point "Youve already got an existing code base you need work on? No problem. We can pick up the project in whatever state it is in now."
+  , point "You've already got an existing code base you need work on? No problem. We can pick up the project in whatever state it is in now."
   , br [] []
   , headerPoint "In-House Utilities"
   , point "Your business manages very particular documents in very particular ways, and Program House can make specialized utility software to handle your particular needs."
@@ -86,6 +87,7 @@ servicesBlock =
   , br [] [] 
   , headerPoint "Training and Consulting"
   , point "Maybe you don't even know what you need. Program House can give you advice, or teach your team the skills they need to move forward."
+  , br [] []
   ] 
 
 
