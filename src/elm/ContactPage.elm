@@ -20,8 +20,7 @@ view {page} =
         [ class "body" ]
         [ titleBlock
         , bodyBlock
-        --, bigLinkButton "hello@programhouse.us" "mailto:hello@programhouse.us"
-        , bigLinkButton "chadtech0@gmail.com" "mailto:chadtech0@gmail.com"
+        , bigLinkButton "hello@programhouse.us" "mailto:hello@programhouse.us"
         , orbiterGame
         ]  
       ]

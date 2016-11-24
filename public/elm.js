@@ -9289,7 +9289,7 @@ var _user$project$ContactPage$view = function (_p0) {
 									[
 										_user$project$ContactPage$titleBlock,
 										_user$project$ContactPage$bodyBlock,
-										A2(_user$project$Components$bigLinkButton, 'chadtech0@gmail.com', 'mailto:chadtech0@gmail.com'),
+										A2(_user$project$Components$bigLinkButton, 'hello@programhouse.us', 'mailto:hello@programhouse.us'),
 										_user$project$ContactPage$orbiterGame
 									]))
 							]))
