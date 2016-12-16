@@ -31,7 +31,7 @@ update message model =
   case message of 
 
     Navigate to ->
-      (model, newUrl ("#/" ++ to))
+      (model, Cmd.batch [ scrollToTop (), newUrl ("#/" ++ to)])
 
 
 urlUpdate : Model -> Model -> (Model, Cmd Msg)

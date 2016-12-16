@@ -29,7 +29,9 @@ view {page} =
 backgroundVideo : Html Msg
 backgroundVideo =
   div
-  [ class "background-video" ]
+  [ class "background-video"
+
+  ]
   [ video 
     [ autoplay True 
     , loop True

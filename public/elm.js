@@ -9426,6 +9426,11 @@ var _user$project$Ports$unmountRegl = _elm_lang$core$Native_Platform.outgoingPor
 	function (v) {
 		return null;
 	});
+var _user$project$Ports$scrollToTop = _elm_lang$core$Native_Platform.outgoingPort(
+	'scrollToTop',
+	function (v) {
+		return null;
+	});
 
 var _user$project$ServicesPage$servicesBlock = A2(
 	_elm_lang$html$Html$div,
@@ -9678,8 +9683,14 @@ var _user$project$Main$update = F2(
 		return {
 			ctor: '_Tuple2',
 			_0: model,
-			_1: _elm_lang$navigation$Navigation$newUrl(
-				A2(_elm_lang$core$Basics_ops['++'], '#/', _p5._0))
+			_1: _elm_lang$core$Platform_Cmd$batch(
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_user$project$Ports$scrollToTop(
+						{ctor: '_Tuple0'}),
+						_elm_lang$navigation$Navigation$newUrl(
+						A2(_elm_lang$core$Basics_ops['++'], '#/', _p5._0))
+					]))
 		};
 	});
 var _user$project$Main$subscriptions = function (model) {

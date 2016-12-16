@@ -11,7 +11,12 @@ window.onkeydown = (e) ->
       false
 
 app         = Elm.Main.fullscreen()
-{mountRegl, unmountRegl} = app.ports
+{mountRegl, unmountRegl, scrollToTop} = app.ports
+
+
+scrollToTop.subscribe ->
+  window.scrollTo 0, 0
+
 
 runRegl = (mount) =>
   regl = Regl mount
